@@ -1,0 +1,42 @@
+package com.havenstay.entity;
+
+
+import com.havenstay.enums.NotificationType;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Data
+@Table(name = "notification")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class Notification {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String subject;
+
+    @NotNull(message = "Recipient is required")
+    private String recipient;
+
+    private String body;
+
+    private String bookingReference;
+
+    @Enumerated(EnumType.STRING)
+    private NotificationType notificationType;
+
+    private final LocalDateTime createdAt = LocalDateTime.now();
+
+}
+
+
