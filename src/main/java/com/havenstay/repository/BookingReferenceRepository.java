@@ -26,3 +26,20 @@ public interface BookingReferenceRepository extends JpaRepository<BookingReferen
                             @Param("checkOutDate") LocalDate checkOutDate
                              );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
@@ -19,7 +20,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler(ChangeSetPersister.NotFoundException.class)
+    @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<ResponseDTO> handleNotFoundException(NotFoundException ex) {
         ResponseDTO response = ResponseDTO.builder()
                 .status(HttpStatus.NOT_FOUND.value())
@@ -31,7 +32,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(NameValueRequiredException.class)
     public ResponseEntity<ResponseDTO> handleNameValueRequiredException(NameValueRequiredException ex) {
-        Response response = Response.builder()
+        ResponseDTO response = ResponseDTO.builder()
                 .status(HttpStatus.BAD_REQUEST.value())
                 .message(ex.getMessage())
                 .build();
@@ -39,8 +40,8 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(InvalidCredentialException.class)
-    public ResponseEntity<Response> handleInvalidCredentialException(InvalidCredentialException ex) {
-        Response response = Response.builder()
+    public ResponseEntity<ResponseDTO> handleInvalidCredentialException(InvalidCredentialException ex) {
+        ResponseDTO response = ResponseDTO.builder()
                 .status(HttpStatus.BAD_REQUEST.value())
                 .message(ex.getMessage())
                 .build();
@@ -48,8 +49,8 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(InvalidBookingStateAndDateException.class)
-    public ResponseEntity<Response> handleInvalidBookingStateAndDateException(InvalidBookingStateAndDateException ex) {
-        Response response = Response.builder()
+    public ResponseEntity<ResponseDTO> handleInvalidBookingStateAndDateException(InvalidBookingStateAndDateException ex) {
+        ResponseDTO response = ResponseDTO.builder()
                 .status(HttpStatus.BAD_REQUEST.value())
                 .message(ex.getMessage())
                 .build();
