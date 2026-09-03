@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private final UserService userService;
-
+// Working nicely
     @GetMapping("/all")
     @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<ResponseDTO> getAllUser(){
         return ResponseEntity.ok(userService.getAllUser());
     }
-
+// Working
     @PutMapping("/update")
     public ResponseEntity<ResponseDTO> updateOwnAccount(@RequestBody UserDTO userDTO){
         return ResponseEntity.ok(userService.updateOwnAccount(userDTO));
