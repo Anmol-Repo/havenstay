@@ -19,11 +19,12 @@ public class AuthController {
 
     private final UserService userService;
 
+    //Working well 👍
     @PostMapping("/register")
     public ResponseEntity<ResponseDTO> registerUser(@RequestBody @Valid RegistrationRequestDTO request){
         return ResponseEntity.ok(userService.registerUser(request)) ;
     }
-
+    //Working well also 👍
     @PostMapping("/login")
     public ResponseEntity<ResponseDTO> loginUser(@RequestBody @Valid LoginRequestDTO request){
         return ResponseEntity.ok(userService.loginUser(request));
