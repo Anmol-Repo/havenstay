@@ -23,6 +23,9 @@ public class Notification {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
+    private NotificationType type;
+
     private String subject;
 
     @NotNull(message = "Recipient is required")
@@ -32,8 +35,6 @@ public class Notification {
 
     private String bookingReference;
 
-    @Enumerated(EnumType.STRING)
-    private NotificationType notificationType;
 
     private final LocalDateTime createdAt = LocalDateTime.now();
 

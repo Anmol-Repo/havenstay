@@ -1,5 +1,6 @@
 package com.havenstay.security;
 
+import org.springframework.web.filter.OncePerRequestFilter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,7 +19,7 @@ import java.io.IOException;
 @Component
 @Slf4j
 @RequiredArgsConstructor
-public class AuthFilter {
+public class AuthFilter extends OncePerRequestFilter{
     private final JwtUtils jwtUtils;
 
     private final CustomUserDetailsService customUserDetailsService;

@@ -2,7 +2,6 @@ package com.havenstay.security;
 
 import com.havenstay.exception.CustomAccessDenialHandler;
 import com.havenstay.exception.CustomAuthenticationEntryPoint;
-import jakarta.servlet.Filter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -46,7 +45,7 @@ public class SecurityFilter {
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .addFilterBefore((Filter) authFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore( authFilter, UsernamePasswordAuthenticationFilter.class);
         return httpSecurity.build();
     }
 

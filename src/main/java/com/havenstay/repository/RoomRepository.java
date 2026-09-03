@@ -20,7 +20,7 @@ public interface RoomRepository extends JpaRepository <Room, Long> {
                     AND :checkOutDate >= b.checkInDate
                     AND b.bookingStatus IN ('BOOKED', 'CHECKED_IN')
                 )
-                AND (:roomType IS NULL OR r.roomType = :roomType)
+                AND (:roomType IS NULL OR r.Type = :roomType)
             """)
     List<Room> findAvailableRooms(
             @Param("checkInDate") LocalDate checkInDate,
@@ -32,13 +32,13 @@ public interface RoomRepository extends JpaRepository <Room, Long> {
     @Query("""
                 SELECT r FROM Room r
                 WHERE CAST(r.roomNumber AS string) LIKE %:searchParam%
-                   OR LOWER(r.roomType) LIKE LOWER(:searchParam)
+                   OR LOWER(r.Type) LIKE LOWER(:searchParam)
                    OR CAST(r.pricePerNight AS string) LIKE %:searchParam%
                    OR CAST(r.capacity AS string) LIKE %:searchParam%
                    OR LOWER(r.description) LIKE LOWER(CONCAT('%', :searchParam, '%'))
             """)
     List<Room> searchRooms(@Param("searchParam") String searchParam);
 
-    @Query("SELECT DISTINCT r.roomType FROM Room r")
+    @Query("SELECT DISTINCT r.Type FROM Room r")
     List<RoomType> getAllRoomTypes();
 }
