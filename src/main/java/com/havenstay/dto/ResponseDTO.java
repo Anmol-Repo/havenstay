@@ -17,6 +17,7 @@ import java.util.List;
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseDTO {
+
     //generic
     private int status;
     private String message;
@@ -28,8 +29,8 @@ public class ResponseDTO {
     private String expirationTime;
 
     //user data output
-    private UserDTO users;
-    private List<UserDTO> user;
+    private UserDTO user;
+    private List<UserDTO> users;
 
     //Booking data output
     private BookingDTO booking;
