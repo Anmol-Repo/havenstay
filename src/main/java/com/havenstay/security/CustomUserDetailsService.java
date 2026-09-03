@@ -1,6 +1,7 @@
 package com.havenstay.security;
 
 import com.havenstay.entity.User;
+import com.havenstay.exception.NotFoundException;
 import com.havenstay.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
