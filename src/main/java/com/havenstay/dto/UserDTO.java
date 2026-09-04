@@ -1,5 +1,6 @@
 package com.havenstay.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.havenstay.enums.UserRole;
@@ -23,7 +24,7 @@ public class UserDTO {
     private Long id;
 
     private String email;
-
+@JsonIgnore
     private String password;
     private String firstName;
     private String lastName;
