@@ -13,14 +13,14 @@ import org.springframework.web.multipart.MultipartFile;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
-
-@RestController("/add")
+//Have tested all these apis all work fine
+@RestController
 @RequestMapping("/api/rooms")
 @RequiredArgsConstructor
 public class RoomController {
    private final RoomService roomService;
 
-   @PostMapping
+   @PostMapping("/add")
    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public ResponseEntity<ResponseDTO> addRoom(
             @RequestParam Integer roomNumber,
@@ -35,11 +35,12 @@ public class RoomController {
                .pricePerNight(pricePerNight)
                .capacity(capacity)
                .description(description)
+               .roomNumber(roomNumber)
                .build();
        return ResponseEntity.ok(roomService.addRoom(roomDTO, imageFile));
    }
 
-
+// Working
     @PutMapping("/update")
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     public ResponseEntity<ResponseDTO> updateRoom(
@@ -56,6 +57,7 @@ public class RoomController {
                 .type(type)
                 .pricePerNight(pricePerNight)
                 .capacity(capacity)
+                .roomNumber(roomNumber)
                 .description(description)
                 .build();
         return ResponseEntity.ok(roomService.updateRoom(roomDTO, imageFile));
@@ -89,7 +91,7 @@ public class RoomController {
     }
 
 
-    @GetMapping("/id")
+    @GetMapping("/types")
     public ResponseEntity<List<RoomType>> getAllRoomTypes(){
         return ResponseEntity.ok(roomService.getAllRoomTypes());
     }

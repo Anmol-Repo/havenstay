@@ -25,6 +25,7 @@ public class Room {
 
     @Min(value = 1, message = "Room Number must be at least 1")
     @Column(unique = true)
+    @NotNull(message = "Room Number is Required")
     private Integer roomNumber;
 
     @Enumerated(EnumType.STRING)
@@ -32,8 +33,10 @@ public class Room {
     private RoomType Type;
 
     @DecimalMin(value = "0.1", message = "Price per night is required")
+    @NotNull(message = "Price is required")
     private BigDecimal pricePerNight;
 
+    @NotNull(message = "Capacity is required")
     @Min(value = 1, message = "capacity must be at least 1")
     private  Integer capacity;
 

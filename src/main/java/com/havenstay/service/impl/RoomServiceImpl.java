@@ -34,7 +34,7 @@ public class RoomServiceImpl implements RoomService {
 //    private static final String IMAGE_DIRECTORY = System.getProperty("user.dir") + "/product-image/";
 
 //image directory for our frontends app
-    private static final String IMAGE_DIRECTORY_FRONTEND = "/Users/dennismac/phegonDev/hotel-react-frontend/public/rooms/";
+    private static final String IMAGE_DIRECTORY_FRONTEND = "D:\\havenstay\\product-image\\";
 
 
 
@@ -66,6 +66,7 @@ public class RoomServiceImpl implements RoomService {
                 String imagePath = saveImageToFrontend(imageFile);
                 existingRoom.setImageUrl(imagePath);
             }
+
 
             if (roomDTO.getRoomNumber() != null && roomDTO.getRoomNumber() >= 0){
                 existingRoom.setRoomNumber(roomDTO.getRoomNumber());
@@ -218,9 +219,12 @@ public class RoomServiceImpl implements RoomService {
 
     //save image to frontend folder
     private String saveImageToFrontend(MultipartFile imageFile){
-        if (!imageFile.getContentType().startsWith("image/")){
-            throw new IllegalArgumentException("Only Image files are allowed");
+        if (imageFile.isEmpty()) {
+            throw new IllegalArgumentException("Image file is empty");
         }
+
+        System.out.println(imageFile.getContentType());
+
 
         //Create directory to store image if it doesn exist
         File directory = new File(IMAGE_DIRECTORY_FRONTEND);
