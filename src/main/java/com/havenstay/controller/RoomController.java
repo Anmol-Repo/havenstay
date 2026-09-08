@@ -29,6 +29,8 @@ public class RoomController {
             @RequestParam Integer capacity,
             @RequestParam String description,
             @RequestParam MultipartFile imageFile
+
+
    ){
        RoomDTO roomDTO = RoomDTO.builder()
                .type(type)
