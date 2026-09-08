@@ -20,6 +20,16 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @ExceptionHandler(PaymentException.class)
+    public ResponseEntity<ResponseDTO> handlePaymentException(PaymentException ex) {
+        ResponseDTO response = ResponseDTO.builder()
+                .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
+                .message(ex.getMessage())
+                .build();
+
+        return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<ResponseDTO> handleNotFoundException(NotFoundException ex) {
         ResponseDTO response = ResponseDTO.builder()
