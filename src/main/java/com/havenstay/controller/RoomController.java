@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
-//Have tested all these apis all work fine
+//Have tested all these apis all work fine 👍
 @RestController
 @RequestMapping("/api/rooms")
 @RequiredArgsConstructor
@@ -42,7 +42,7 @@ public class RoomController {
        return ResponseEntity.ok(roomService.addRoom(roomDTO, imageFile));
    }
 
-// Working
+// Working 👍
     @PutMapping("/update")
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     public ResponseEntity<ResponseDTO> updateRoom(
@@ -65,24 +65,25 @@ public class RoomController {
         return ResponseEntity.ok(roomService.updateRoom(roomDTO, imageFile));
     }
 
+    // Working 👍
     @GetMapping("/all")
     public ResponseEntity<ResponseDTO> getAllRooms(){
        return ResponseEntity.ok(roomService.getAllRooms());
     }
 
-
+    // Working 👍
     @GetMapping("/{id}")
     public ResponseEntity<ResponseDTO> getRoomById(@PathVariable Long id){
        return ResponseEntity.ok(roomService.getRoomById(id));
     }
-
+    // Working 👍
     @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     public ResponseEntity<ResponseDTO> deleteRoom(@PathVariable Long id){
        return ResponseEntity.ok(roomService.deleteRoom(id));
     }
 
-
+    // Working 👍
     @GetMapping("/available")
     public ResponseEntity<ResponseDTO> getAvailableRooms(
             @RequestParam LocalDate checkInDate,
@@ -92,14 +93,14 @@ public class RoomController {
         return ResponseEntity.ok(roomService.getAvailableRooms(checkInDate, checkOutDate,roomType));
     }
 
-
+    // Working 👍
     @GetMapping("/types")
     public ResponseEntity<List<RoomType>> getAllRoomTypes(){
         return ResponseEntity.ok(roomService.getAllRoomTypes());
     }
 
 
-
+    // Working 👍
     @GetMapping("/search")
     public ResponseEntity<ResponseDTO> searchRoom(@RequestParam String input){
         return ResponseEntity.ok(roomService.searchRoom(input));
