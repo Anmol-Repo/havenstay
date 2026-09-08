@@ -12,13 +12,13 @@ public class PaymentController {
 
     //both working 👍👍👍
     private final PaymentService paymentService;
-    //excellent working 👍👍
+    // working y 👍👍
     @PostMapping("/pay")
     public ResponseEntity<String> createPayment(@RequestBody PaymentRequest paymentRequest) {
         return ResponseEntity.ok(paymentService.createPayment(paymentRequest));
     }
 
-    //excellent working 👍👍
+    // working nicely 👍👍
     @PostMapping("/verify")
     public ResponseEntity<Boolean> verifyPayment(
             @RequestBody PaymentRequest paymentRequest) {
