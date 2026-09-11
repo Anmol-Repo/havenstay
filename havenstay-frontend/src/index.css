@@ -226,7 +226,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
  }
  
  
@@ -243,16 +243,15 @@
  /* The header banner */
 .header-banner {
     position: relative;
-    height: 700px;
+    height: 650px;
     overflow: hidden;
 }
  
  .header-banner {
   position: relative;
-  height: 700px;
-  margin-top: 10px;
-  margin-left: 50px;
-  margin-right: 32px;
+  height: 610px;
+  margin-left: 55px;
+  margin-right: 50px;
     border-radius: 25px;
  }
  
@@ -280,7 +279,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
-  align-items: center;
+  align-items:flex-start;
   margin-bottom: 10px;
   padding: 20px;
   margin-left: 45px;
@@ -323,20 +322,21 @@
  
  .home-search-button {
   margin-left: 10px;
-  padding: 15px 20px;
-  background-color: #007F86;
+  margin-top: 20px;
+  padding: 18px 15px;
+  border: 2px solid #019aa2 ;
+  background-color: #019aa2;
   font-weight: 600;
   color: #fff;
-  border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s;
+  transition: background-color 0.1s;
  }
  
  
  .home-search-button:hover {
-  background-color: rgb(34, 80, 128)
+  background-color: #007F86;
  }
  
  
@@ -420,17 +420,56 @@
  
  
  /*View all rooms home section*/
- .view-rooms-home {
+ /* .view-rooms-home {
   margin: 15px 0px 0px 4.6rem;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 22px;
+  font-weight: 700;
   text-decoration: underline;
+
   color: #FF7F50;
- 
- 
  }
+  */
+
+
+.view-all-rooms {
+  text-align: center;
+  margin: 25px 0 35px;
+}
+
+.view-all-rooms button {
  
+  margin-top: 25px;
+  padding: 25px 10px;
+  background-color: rgb(235, 255, 250);
+  color: #007F86;
+  border: 2px solid #007F86;
+  border-bottom: 3px solid #007F86;
+  border-radius: 60px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 127, 134, 0.18);
+  transition: all 0.3s ease;
+     
+}
+
+.view-all-rooms button:hover {
+  background-color: #007F86;
+  color: white;
+  box-shadow: 0 6px 14px rgba(0, 127, 134, 0.3);
+  transform: translateY(-2px);
+  
+}
  
+
+
+
+
+
+
+
+
+
  
  
  /*Home services section*/
@@ -1917,7 +1956,7 @@
     padding: 5px;
     cursor: pointer;
     font-size: 18px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.1s ease;
   }
   
   .DayPicker-NavButton:hover {

@@ -34,7 +34,9 @@ public class RoomServiceImpl implements RoomService {
 //    private static final String IMAGE_DIRECTORY = System.getProperty("user.dir") + "/product-image/";
 
 //image directory for our frontends app
-    private static final String IMAGE_DIRECTORY_FRONTEND = "D:\\havenstay\\product-image\\";
+ //   private static final String IMAGE_DIRECTORY_FRONTEND = "D:\\havenstay\\product-image\\";
+
+    private static final String IMAGE_DIRECTORY_FRONTEND = "D:\\havenstay\\havenstay-frontend\\public\\rooms\\";
 
 
 

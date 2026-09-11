@@ -30,7 +30,11 @@ const HomePage = () => {
             <RoomSearch handSearchResult={handleSearchResult}/>
             <RoomResult roomSearchResults={roomSearchResult}/>
 
-            <h4><a className="view-rooms-home" href="/rooms">All Rooms</a></h4>
+            <div className="view-all-rooms">
+    <button onClick={() => window.location.href = "/rooms"}>
+        View All Rooms
+    </button>
+            </div>
 
             <h2 className="home-services">Services at <span className="phegon-color">HavenStay</span></h2>
 

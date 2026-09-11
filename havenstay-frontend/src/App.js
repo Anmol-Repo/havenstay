@@ -4,6 +4,8 @@ import  Navbar from "./component/common/Navbar"
 import RegisterPage from './component/auth/Register';
 import LoginPage from './component/auth/LoginPage';
 import HomePage from './component/home/HomePage';
+import AllRoomsPage from './component/booking_rooms/AllRoomsPage';
+import RoomDetailsPage from './component/booking_rooms/RoomDetailsPage';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path="/register" element={<RegisterPage/>}/>
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/home" element={<HomePage/>}/>
+          <Route path="/rooms" element={<AllRoomsPage/>}/>
+          <Route path="/room-details/:roomId" element={<RoomDetailsPage/>} />
         </Routes>
 
        </div>

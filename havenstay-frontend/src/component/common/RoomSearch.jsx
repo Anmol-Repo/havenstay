@@ -159,7 +159,7 @@ return (
   
         {/* SEARCH BUTTON */}
         <button className="home-search-button" onClick={handleInternalSearch}>
-          Search Roooms
+          Search Rooms
         </button>
       </div>
   
