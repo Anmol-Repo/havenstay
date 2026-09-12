@@ -105,8 +105,11 @@ public class BookingServiceImpl implements BookingService {
 
         bookingRepository.save(booking);
 
+        bookingDTO.setBookingReference(bookingReference);
+
         //generate the payment url which will be sent  by mail
-        String paymentUrl = "http://localhost:3000/payment/"+ bookingReference + "/" + totalPrice;
+        String paymentUrl = "http://localhost:3000/payment/"+ bookingReference;
+
 
         log.info("PAYMENT LINK: {}",paymentUrl);
 
@@ -114,7 +117,12 @@ public class BookingServiceImpl implements BookingService {
         NotificationDTO notificationDTO = NotificationDTO.builder()
                 .recipient(currentUser.getEmail())
                 .subject("Booking Confirmation")
-                .body(String.format("Your booking has  been created successfully. Please proceed with your payment using the payment link below "+  "\n%s", paymentUrl))
+                .body(String.format("Your booking has  been successfully created.\n\n" +
+                        "Booking Reference: %s\n" +
+                        "Total Amount: ₹%s\n\n" +
+                        "Please proceed with your payment using the link below"+  "\n%s", bookingReference,
+                        totalPrice,
+                         paymentUrl))
                 .bookingReference(bookingReference)
                 .build();
 

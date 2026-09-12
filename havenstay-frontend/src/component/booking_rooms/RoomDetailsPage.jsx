@@ -72,8 +72,11 @@
          checkOutDate: formatterdCheckOutDate,
          roomId: room.id,
        };
+
+       
  
        const resp = await ApiService.bookRoom(booking);
+       console.log("BOOKING RESPONSE:", resp);
  
        if (resp.status === 200) {
          setShowMessage(
@@ -81,7 +84,7 @@
          );
          setTimeout(() => {
            setShowMessage(null);
-           navigate("/rooms");
+           navigate(`/payment/${resp.booking.bookingReference}`);
          }, 8000);
        }
      } catch (error) {

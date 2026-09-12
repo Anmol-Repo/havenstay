@@ -10,6 +10,9 @@ import {CustomerRoute} from './service/Guard'
 import FindBookingPage from './component/booking_rooms/FindBookingPage';
 import ProfilePage from './component/profile/ProfilePage';
 import EditProfilePage from './component/profile/EditProfile';
+import PaymentPage from "./component/payment/PaymentPage";
+import PaymentSuccess from "./component/payment/PaymentSuccess";
+import PaymentFailure from "./component/payment/PaymentFailure";
 
 function App() {
   return (  
@@ -21,6 +24,7 @@ function App() {
           <Route path="/register" element={<RegisterPage/>}/>
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/home" element={<HomePage/>}/>
+          <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="/rooms" element={<AllRoomsPage/>}/>
           <Route path="/find-booking" element={<FindBookingPage/>}/>
 
@@ -33,6 +37,21 @@ function App() {
           <Route path="/edit-profile" 
           element={<CustomerRoute element={<EditProfilePage/>}/>} />
 
+          <Route
+           path="/payment/:bookingReference"
+           element={<CustomerRoute element={<PaymentPage/>} />}/>
+
+          <Route
+          path="/payment-success/:bookingReference"
+         element={<CustomerRoute element={<PaymentSuccess/>} />}/>
+
+          <Route
+          path="/payment-failure/:bookingReference"
+         element={<CustomerRoute element={<PaymentFailure/>} />}/>
+
+        
+        {/* FALLBACK URL */}
+        <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
 
        </div>
