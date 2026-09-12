@@ -18,6 +18,8 @@ import ManageRoomPage from './component/admin/ManageRoomPage';
 import AddRoomPage from './component/admin/AddRoomPage';
 import EditRoomPage from './component/admin/EditRoomPage';
 import ManageBookingsPage from './component/admin/ManageBookingsPage';
+import EditBookingPage from './component/admin/EditBookingPage';
+import AdminRegisterPage from './component/admin/AdminRegisterPage';
 
 function App() {
   return (  
@@ -70,6 +72,12 @@ function App() {
          
          <Route path="/admin/manage-bookings"
          element={<AdminRoute element={<ManageBookingsPage/>} />}/>
+         
+         <Route path="/admin/edit-booking/:bookingCode"
+         element={<AdminRoute element={<EditBookingPage/>} />}/>
+         
+         <Route path="/admin-register"
+         element={<AdminRoute element={<AdminRegisterPage/>} />}/>
 
 
         
