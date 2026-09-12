@@ -6,13 +6,15 @@ import LoginPage from './component/auth/LoginPage';
 import HomePage from './component/home/HomePage';
 import AllRoomsPage from './component/booking_rooms/AllRoomsPage';
 import RoomDetailsPage from './component/booking_rooms/RoomDetailsPage';
-import {CustomerRoute} from './service/Guard'
+import {AdminRoute, CustomerRoute} from './service/Guard'
 import FindBookingPage from './component/booking_rooms/FindBookingPage';
 import ProfilePage from './component/profile/ProfilePage';
 import EditProfilePage from './component/profile/EditProfile';
 import PaymentPage from "./component/payment/PaymentPage";
 import PaymentSuccess from "./component/payment/PaymentSuccess";
 import PaymentFailure from "./component/payment/PaymentFailure";
+import AdminPage from './component/admin/AdminPage';
+import ManageRoomPage from './component/admin/ManageRoomPage';
 
 function App() {
   return (  
@@ -48,6 +50,14 @@ function App() {
           <Route
           path="/payment-failure/:bookingReference"
          element={<CustomerRoute element={<PaymentFailure/>} />}/>
+
+         {/*ADMIN ROUTES */}
+         <Route path="/admin"
+         element={<AdminRoute element={<AdminPage/>} />}/>
+          {/* The ADMIN Route only can be accessed by a ADMIN */}
+
+         <Route path="/admin/manage-rooms"
+         element={<AdminRoute element={<ManageRoomPage/>} />}/>
 
         
         {/* FALLBACK URL */}

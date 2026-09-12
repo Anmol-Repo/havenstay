@@ -58,22 +58,26 @@
  }
  
  
- .navbar-ul li a {
+.navbar-ul li a {
   text-decoration: none;
   color: #666;
-  transition: color 0.3s;
- }
+  padding: 10px 16px;
+  border-radius: 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
  
  
- .navbar-ul li a:hover {
-  color: #FF007F;
-  color: #FF7F50;
- }
+.navbar-ul li a:hover {
+  color: #00a2aa;
+  background-color: #e8f7f7;
+}
  
- 
- .navbar-ul li a.active {
-  color: #FF7F50;
- }
+
+.navbar-ul li a.active {
+  color:  #FF7F50;
+  background-color: #d8ffff;
+}
  
  
  .auth-container {
@@ -1877,6 +1881,13 @@
     margin-top: 50px;
 }
  
+.payment-result button {
+    margin: 10px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
  
  
  
