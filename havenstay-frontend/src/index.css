@@ -810,12 +810,17 @@
  
  
  .booking-success-message {
-  text-align: center;
-  color: #45a049;
-  font-weight: 800;
-  font-size: 16px;
- }
- 
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 12px 24px;
+    border-radius: 6px;
+    background-color: #d4edda;
+    color: #155724;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
  
  .error-message {
   text-align: center;
@@ -1852,6 +1857,8 @@
   color: #4caf50;
   font-size: 1rem;
   margin-top: 1rem;
+ 
+
  }
  
  
@@ -1863,7 +1870,12 @@
   height: 100vh;
   background-color: #f9f9f9;
   padding: 20px;
+  
  }
+ .payment-result {
+    text-align: center;
+    margin-top: 50px;
+}
  
  
  

@@ -78,15 +78,11 @@
        const resp = await ApiService.bookRoom(booking);
        console.log("BOOKING RESPONSE:", resp);
  
-       if (resp.status === 200) {
-         setShowMessage(
-           "Your Booking is Successful. Your booking details have been sent to your email . Please proceeed for payment"
-         );
-         setTimeout(() => {
-           setShowMessage(null);
-           navigate(`/payment/${resp.booking.bookingReference}`);
-         }, 8000);
-       }
+      if (resp.status === 200) {
+    setShowMessage(
+        "Your Booking is Successful. Your booking details have been sent to your email . Please proceeed for payment"
+    );
+}
      } catch (error) {
        setErrorMessage(error.response?.data?.message || error.message);
      }

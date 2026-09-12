@@ -171,7 +171,6 @@ public class PaymentService {
                 throw new PaymentException("Invalid Razorpay payment signature");
             }
 
-            updatePaymentBooking(paymentRequest);
 
             return true;
         } catch (PaymentException e) {

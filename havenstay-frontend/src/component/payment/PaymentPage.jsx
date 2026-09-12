@@ -47,6 +47,7 @@ const PaymentPage = () => {
 
                         const verified =
                             await ApiService.verifyPayment(paymentData);
+                            console.log("PAYMENT VERIFICATION RESPONSE:", verified);
 
                         if (verified === true) {
                             navigate(
