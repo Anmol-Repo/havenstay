@@ -17,6 +17,7 @@ import AdminPage from './component/admin/AdminPage';
 import ManageRoomPage from './component/admin/ManageRoomPage';
 import AddRoomPage from './component/admin/AddRoomPage';
 import EditRoomPage from './component/admin/EditRoomPage';
+import ManageBookingsPage from './component/admin/ManageBookingsPage';
 
 function App() {
   return (  
@@ -66,6 +67,9 @@ function App() {
          
          <Route path="/admin/edit-room/:roomId"
          element={<AdminRoute element={<EditRoomPage/>} />}/>
+         
+         <Route path="/admin/manage-bookings"
+         element={<AdminRoute element={<ManageBookingsPage/>} />}/>
 
 
         
