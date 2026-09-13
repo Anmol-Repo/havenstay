@@ -29,6 +29,7 @@ const AdminPage = () => {
             <div className="admin-actions">
                 <button className="admin-button" onClick={()=> navigate('/admin/manage-rooms')}> Manage Rooms</button>
                 <button className="admin-button" onClick={()=> navigate('/admin/manage-bookings')}> Manage Bookings</button>
+                <button className="admin-button" onClick={() => navigate('/admin-register')}> Create Admin</button>
             </div>
         </div>
     )
